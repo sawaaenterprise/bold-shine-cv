@@ -8,3 +8,8 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Application rules
+- Keep the original portfolio at `/` and full CV at `/cv` using TanStack routes so repository navigation stays intact.
+- Define portfolio styling and reduced-motion-aware animation in the global design system so all views share semantic tokens.
+- Store original repository media and the downloadable PDF as project-scoped asset pointers so the app does not depend on another project's storage.

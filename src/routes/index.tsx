@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Asterisk, FileText, Linkedin } from "lucide-react";
+import { ArrowDown, ArrowUpRight, FileText, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CvDownload } from "@/components/cv-download";
 import portraitAsset from "@/assets/wahab-bold-editorial.jpg.asset.json";
@@ -65,18 +65,13 @@ function Portfolio() {
         <div className="hero-smoke" aria-hidden="true" />
         <div className="hero-texture" aria-hidden="true" />
         <div className="dark-particles" aria-hidden="true">{Array.from({ length: 28 }, (_, index) => <i key={index} />)}</div>
-        <div className="hero-bridge" aria-hidden="true">
-          <span className="bridge-glow" />
-          <span className="bridge-track"><span>{"Python Developer ✦ ".repeat(2)}</span><span>{"Python Developer ✦ ".repeat(2)}</span></span>
-        </div>
+        <div className="shadow-shards" aria-hidden="true"><i /><i /><i /><i /></div>
         <img className="hero-image" src={portrait} alt="Syed Abdul Wahab in a sharply lit editorial portrait" width={1145} height={768} fetchPriority="high" />
         <Header />
         <div className="hero-copy">
-          <p className="hero-kicker"><Asterisk /> Python developer · Designer · Builder</p>
           <h1><span>Syed</span><span className="hot-line">Abdul</span><span>Wahab<b>.</b></span></h1>
           <div className="hero-intro"><p>Thoughtful design.<br />Dependable development.</p><Button asChild variant="portfolio"><a href="#work">See the work <ArrowUpRight /></a></Button></div>
         </div>
-        <p className="portrait-caption">Python developer / Digital designer</p>
         <div className="hero-footer"><span>Code · Direction · Identity</span><a href="#work">Selected work <ArrowDown /></a><span>India / Worldwide</span></div>
       </section>
 
