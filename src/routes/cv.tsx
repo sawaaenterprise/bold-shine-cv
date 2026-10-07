@@ -23,7 +23,6 @@ function CvPage() {
     <main className="cv-page">
       <header className="cv-nav">
         <Link to="/" className="cv-back"><ArrowLeft /> Portfolio</Link>
-        <span className="cv-mark">SAW<span>®</span></span>
         <CvDownload className="cv-download-small" />
       </header>
 

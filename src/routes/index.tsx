@@ -50,7 +50,6 @@ const projects = [
 function Header() {
   return (
     <header className="topbar">
-      <a className="wordmark" href="#top" aria-label="Syed Abdul Wahab home">SAW<span>®</span></a>
       <nav className="nav-links" aria-label="Main navigation">
         <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a><Link to="/cv" resetScroll>CV</Link>
       </nav>
