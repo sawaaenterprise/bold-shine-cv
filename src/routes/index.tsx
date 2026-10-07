@@ -49,10 +49,8 @@ const projects = [
 
 function Header() {
   return (
-    <header className="topbar">
-      <nav className="nav-links" aria-label="Main navigation">
-        <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a><Link to="/cv" resetScroll>CV</Link>
-      </nav>
+    <header className="topbar" aria-hidden="true">
+      <span className="hot-bar" />
     </header>
   );
 }
@@ -65,6 +63,7 @@ function Portfolio() {
         <div className="hero-texture" aria-hidden="true" />
         <div className="dark-particles" aria-hidden="true">{Array.from({ length: 28 }, (_, index) => <i key={index} />)}</div>
         <div className="shadow-shards" aria-hidden="true"><i /><i /><i /><i /></div>
+        <div className="hot-sparks" aria-hidden="true">{Array.from({ length: 36 }, (_, index) => <i key={index} style={{ left: `${(index * 37) % 100}%`, animationDelay: `-${(index * 1.3) % 9}s`, animationDuration: `${6 + (index % 5) * 1.4}s`, ["--sx" as string]: `${((index * 53) % 120) - 60}px`, width: `${2 + (index % 4)}px`, height: `${2 + (index % 4)}px` }} />)}</div>
         <img className="hero-image" src={portrait} alt="Syed Abdul Wahab in a sharply lit editorial portrait" width={1145} height={768} fetchPriority="high" />
         <Header />
         <div className="hero-copy">
