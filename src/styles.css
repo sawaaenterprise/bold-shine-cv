@@ -357,3 +357,17 @@ a:focus-visible { outline: 2px solid var(--volt); outline-offset: 6px; }
 .cv-download-error a { text-decoration: underline; color: var(--volt); }
 @media (max-width: 700px) { .shadow-shards i { opacity: .6; } .contact-row { gap: .5rem; } }
 @media (prefers-reduced-motion: reduce) { .dark-particles { display: none; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Hot & bold: darker hero, glowing navbar line, rising ember sparks. */
+.hero { background: oklch(0.02 0 0); }
+.hero::after { background: linear-gradient(90deg, oklch(0.005 0 0 / 97%) 0%, oklch(0.005 0 0 / 70%) 40%, oklch(0.005 0 0 / 20%) 66%), linear-gradient(0deg, oklch(0.005 0 0 / 85%) 0%, transparent 32%); }
+.topbar { min-height: 3rem; }
+.hot-bar { display: block; width: min(420px, 60vw); height: 3px; background: linear-gradient(90deg, transparent, var(--volt), oklch(0.65 0.24 35), var(--volt), transparent); background-size: 200% 100%; box-shadow: 0 0 18px oklch(0.65 0.24 35 / 70%), 0 0 40px var(--volt); animation: hot-bar-flow 2.6s linear infinite, hot-bar-pulse 1.8s ease-in-out infinite alternate; }
+@keyframes hot-bar-flow { to { background-position: -200% 0; } }
+@keyframes hot-bar-pulse { from { opacity: .65; transform: scaleX(.85); } to { opacity: 1; transform: scaleX(1); } }
+.hot-sparks { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+.hot-sparks i { position: absolute; bottom: -10px; border-radius: 50%; background: oklch(0.8 0.2 60); box-shadow: 0 0 8px oklch(0.7 0.24 40), 0 0 16px oklch(0.65 0.24 35 / 70%); animation: spark-rise 8s linear infinite; }
+.hot-sparks i:nth-child(3n) { background: var(--volt); box-shadow: 0 0 10px var(--volt); }
+.hot-sparks i:nth-child(4n) { background: oklch(0.02 0 0); box-shadow: 0 0 6px oklch(0.65 0.24 35 / 80%); }
+@keyframes spark-rise { 0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0; } 10% { opacity: 1; } 80% { opacity: .9; } 100% { transform: translate3d(var(--sx, 30px), -105vh, 0) scale(.3); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .hot-sparks { display: none; } .hot-bar { animation: none; } }
